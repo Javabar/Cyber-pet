@@ -1,22 +1,21 @@
-class Cat extends Animal {
-	constructor(name, content) {
-		super(name, content);
-		this.content = content;
-	}
+const { Animal } = require("./Animal");
 
-	playOut() {
-		this.restlessness -= 10;
-		this.tired += 10;
-		console.log(`${this.name} is Playing out`);
-		return this;
-	}
-	
+class Cat extends Animal {
+  constructor(name, content) {
+    super(name, content);
+    this.content = content;
+  }
+
+  playOut() {
+    this.restlessness -= 10;
+    this.tired += 10;
+    console.log(`${this.name} is Playing out`);
+    return this;
+  }
 }
 
-const felix = new Cat('Felix', 'Purring');
+// const felix = new Cat("Felix", "Purring");
 
-felix.sleep().playOut().stats();
+// felix.sleep().playOut().stats();
 
-module.exports = {Cat};
-
-
+module.exports = { Cat };

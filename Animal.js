@@ -1,10 +1,5 @@
 class Animal {
-  health;
-  hunger;
-  thirst;
-  restlessness;
-  isAlive = true;
-  status;
+ 
   constructor(name) {
     this.name = name;
     this.health = 100;
@@ -15,20 +10,21 @@ class Animal {
   get restlessness() {
     return this.restlessness;
   }
+ 
   restlessness() {
     this.restlessness += num;
-    this.health -= 5;
-    this.restless += 5;
+    this.health = -5;
+    this.restless = +5;
     if (this._health < 0) this._health = 0;
     return this.checkstats();
   }
   checkStats() {
-    if (this._health <= 0) {
-      this._isAlive = false;
+    if (this.health <= 0) {
+      this.isAlive = false;
       this.status = `${this.name} has died from malnutrition, please make sure your next pet has plenty to eat and drink.`;
     }
-    if (this._boredom >= 50) {
-      this._isAlive = false;
+    if (this.restlessness >= 50) {
+      this.isAlive = false;
       this.status = `${this.name} has run away to join the circus because they were bored, please play with your pet more next time...`;
     }
   }
@@ -38,8 +34,8 @@ class Animal {
     return this;
   }
   eats() {
-    this.health -= 5;
-    this.hunger += 10;
+    this.health = -5;
+    this.hunger = +10;
     console.log(`${this.name}'s health is ${this.health}`);
     return this;
   }
@@ -54,6 +50,7 @@ class Animal {
       hunger: this.hunger,
       thirst: this.thirst,
       restlessness: this.restlessness,
+      
     });
   }
 }

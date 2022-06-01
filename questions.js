@@ -45,46 +45,46 @@ const questions = {
     ],
   },
 
-  dogPlay: {
-    type: "list",
-    name: "play",
-    message: "Do you want to play with?",
-    choices: [
-      {
-        key: "a",
-        name: "Stick: boredom -2",
-        value: "stick",
-      },
-      {
-        key: "b",
-        name: "Ball: boredom -5",
-        value: "ball",
-      },
-      {
-        key: "c",
-        name: "Chase the postman: boredom -10",
-        value: "chase",
-      },
-    ],
-  },
+  // dogPlay: {
+  //   type: "list",
+  //   name: "play",
+  //   message: "Do you want to play with?",
+  //   choices: [
+  //     {
+  //       key: "a",
+  //       name: "Stick: boredom -2",
+  //       value: "stick",
+  //     },
+  //     {
+  //       key: "b",
+  //       name: "Ball: boredom -5",
+  //       value: "ball",
+  //     },
+  //     {
+  //       key: "c",
+  //       name: "Chase the postman: boredom -10",
+  //       value: "chase",
+  //     },
+  //   ],
+  // },
 
-  rabbitPlay: {
-    type: "list",
-    name: "play",
-    message: "Do you want to play with?",
-    choices: [
-      {
-        key: "a",
-        name: "Straw: boredom -2",
-        value: "straw",
-      },
-      {
-        key: "b",
-        name: "Paper towels: boredom -5",
-        value: "paper",
-      },
-    ],
-  },
+  // rabbitPlay: {
+  //   type: "list",
+  //   name: "play",
+  //   message: "Do you want to play with?",
+  //   choices: [
+  //     {
+  //       key: "a",
+  //       name: "Straw: boredom -2",
+  //       value: "straw",
+  //     },
+  //     {
+  //       key: "b",
+  //       name: "Paper towels: boredom -5",
+  //       value: "paper",
+  //     },
+  //   ],
+  // },
 
   parrotPlay: {
     type: "list",
@@ -145,7 +145,7 @@ const questions = {
     choices: [
       {
         key: "a",
-        name: "Play with your pet",
+        name: "Let your pet play out",
         value: "play",
       },
       {

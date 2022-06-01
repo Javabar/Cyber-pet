@@ -3,7 +3,7 @@ const inquirer = require("inquirer");
 const { Animal } = require("./Animal");
 const { Cat } = require("./Cat");
 const { Parrot } = require("./parrot");
-const { questions } = require("./questions");
+// const { questions } = require("./questions");
 let myPet = "";
 
 const start = async () => {
@@ -32,37 +32,69 @@ const start = async () => {
   });
   if (typeOfPet === "cat") myPet = new Cat(petName);
   else if (typeOfPet === "Parrot") myPet = new Parrot(petName);
-
   userChoice();
 };
+
 async function userChoice() {
-  myPet.restlessness =+ 5;
-  // myPet.hunger(5);
-  // myPet.thirst(5);
+  myPet.restlessness = +5;
+  myPet.hunger = +5;
+  myPet.thirst = +5;
   myPet.stats;
-  // if (!myPet._isAlive) {
-  //   gameOver();
-  //   return;
-  // }
 
-  const { choice } = await inquirer.prompt(questions.choice);
+  if ((isAlive = false)) {
+    gameOver();
+    return;
+  }
 
-  if (choice === "status") console.log(myPet.status);
-  if (choice === "play") await myPet.play();
-  if (choice === "feed") await myPet.eats();
-  if (choice === "drink") await myPet.drinks();
+  const { choice } = await inquirer.prompt({
+    type: "list",
+    name: "choice",
+    message: "What would you like to do?",
+    choices: [
+      {
+        key: "a",
+        name: "Play with your pet",
+        value: "play",
+      },
+      {
+        key: "b",
+        name: "Feed your pet",
+        value: "feed",
+      },
+      {
+        key: "c",
+        name: "Give your pet a drink",
+        value: "drink",
+      },
+      {
+        key: "d",
+        name: "View your pet's status",
+        value: "status",
+      },
+      {
+        key: "e",
+        name: "Quit the game",
+        value: "quit",
+      },
+    ],
+  });
+
+  if (choice === "status") console.log(myPet.stats());
+  if (choice === "play") await myPet.play;
+  if (choice === "feed") await myPet.eats;
+  if (choice === "drink") await myPet.drinks;
   if (choice === "quit") {
     const quitChoice = await confirmQuit();
     if (quitChoice) return;
   }
-  myPet.checkStats();
+  myPet.checkStats;
   userChoice();
 }
 async function gameOver() {
   console.log(myPet.status);
   const { playAgain } = await inquirer.prompt(questions.playAgain);
 
-  if (playAgain === 'yes') start();
+  if (playAgain === "yes") start();
   else return;
 }
 start();

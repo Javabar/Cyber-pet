@@ -1,8 +1,8 @@
 {
-  "name": "cyberpet",
+  "name": "cyber-pet",
   "version": "1.0.0",
   "description": "",
-  "main": "Cat.js",
+  "main": "Animal.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -1,4 +1,4 @@
-const { Animal } = require("./Animal");
+const { Animal } = require("./Animal.js");
 
 class Cat extends Animal {
   constructor(name, content) {
@@ -7,7 +7,7 @@ class Cat extends Animal {
   }
 
   playOut() {
-    this.restlessness -= 10;
+    this.frustration -= 10;
     this.tired += 10;
     console.log(`${this.name} is Playing out`);
     return this;

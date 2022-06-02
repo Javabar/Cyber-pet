@@ -1,13 +1,11 @@
 const inquirer = require("inquirer");
 
-const { Animal } = require("./Animal");
-const { Cat } = require("./Cat");
-const { Parrot } = require("./parrot");
-// const { questions } = require("./questions");
+const { Cat } = require("./Cat.js");
+const { Parrot } = require("./parrot.js");
 let myPet = "";
 
 const start = async () => {
-  const typeOfPet = await inquirer.prompt({
+  const { typeOfPet } = await inquirer.prompt({
     type: "list",
     name: "typeOfPet",
     message:
@@ -25,7 +23,7 @@ const start = async () => {
       },
     ],
   });
-  const petName = await inquirer.prompt({
+  const { petName } = await inquirer.prompt({
     type: "input",
     name: "petName",
     message: "What is your pet called?",
@@ -36,10 +34,7 @@ const start = async () => {
 };
 
 async function userChoice() {
-  myPet.restlessness = +5;
-  myPet.hunger = +5;
-  myPet.thirst = +5;
-  myPet.stats;
+  myPet.stats();
 
   if ((isAlive = false)) {
     gameOver();
@@ -80,14 +75,14 @@ async function userChoice() {
   });
 
   if (choice === "status") console.log(myPet.stats());
-  if (choice === "play") await myPet.play;
-  if (choice === "feed") await myPet.eats;
-  if (choice === "drink") await myPet.drinks;
+  if (choice === "play") await myPet.playOut();
+  if (choice === "feed") await myPet.eats();
+  if (choice === "drink") await myPet.drinks();
   if (choice === "quit") {
     const quitChoice = await confirmQuit();
     if (quitChoice) return;
   }
-  myPet.checkStats;
+  // myPet.stats();
   userChoice();
 }
 async function gameOver() {

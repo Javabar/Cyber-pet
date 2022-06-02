@@ -1,5 +1,4 @@
 class Animal {
- 
   constructor(name) {
     this.name = name;
     this.health = 100;
@@ -10,12 +9,12 @@ class Animal {
   get restlessness() {
     return this.restlessness;
   }
- 
+
   restlessness() {
     this.restlessness += num;
-    this.health = -5;
-    this.restless = +5;
-    if (this._health < 0) this._health = 0;
+    this.health -=5;
+    this.restless +=5;
+    if (this.health < 0) this.health = 0;
     return this.checkstats();
   }
   checkStats() {
@@ -34,8 +33,8 @@ class Animal {
     return this;
   }
   eats() {
-    this.health = -5;
-    this.hunger = +10;
+    this.health -= 5;
+    this.hunger += 10;
     console.log(`${this.name}'s health is ${this.health}`);
     return this;
   }
@@ -50,7 +49,6 @@ class Animal {
       hunger: this.hunger,
       thirst: this.thirst,
       restlessness: this.restlessness,
-      
     });
   }
 }
